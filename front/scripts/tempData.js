@@ -31,4 +31,4 @@ const tempData = [
   },
 ];
 
-module.exports = tempData;
+

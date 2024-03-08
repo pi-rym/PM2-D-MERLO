@@ -1,33 +1,36 @@
 
-const dataPeliculas = () => {
-    $.get("https://students-api.2.us-1.fl0.io/movies", (data, status) => {
+const pelisContenedor = document.getElementById('pelisContenedor');
 
-        const pelisContenedor = document.getElementById('pelisContenedor');
+function renderPelis(pelicula) {
 
-        function renderPelis(pelicula) {
+const tarjetaPelicula = document.createElement("div");
+tarjetaPelicula.classList.add("peliCard");  
 
-            const tarjetaPelicula = document.createElement("div");
-            tarjetaPelicula.classList.add("peliCard");
+const tarjetaPeliculaCara = document.createElement("div");
+tarjetaPeliculaCara.classList.add("peliCardCara");
+tarjetaPeliculaCara.innerHTML = `
+<img class="poster" src="${pelicula.poster}" alt="${pelicula.title}">
+`;
 
-            tarjetaPelicula.innerHTML = `
-            <img src="${pelicula.poster}" alt="${pelicula.title}">
-            <h3>${pelicula.title} (${pelicula.year})</h3>
-            <p>${pelicula.director}</p>
-            <p>${pelicula.duration}</p>
-            <p>${pelicula.genre}</p>
-            <p>${pelicula.rate}</p>
-            `
+const tarjetaPeliculaAtras = document.createElement("div");
+tarjetaPeliculaAtras.classList.add("peliCardAtras");
+tarjetaPeliculaAtras.innerHTML = `
+     <h3 class="title">${pelicula.title} (${pelicula.year})</h3>
+     <p class="infoPeli">Dirigida por: ${pelicula.director}</p>
+     <p class="infoPeli">Duración: ${pelicula.duration}</p>
+     <p class="infoPeli">Género: ${pelicula.genre}</p>
+     <p class="infoPeli">${pelicula.rate}</p>
+`;
 
-            return tarjetaPelicula;
-        }
 
-        data.forEach(pelicula => {
-            const tarjeta = renderPelis(pelicula);
-            pelisContenedor.appendChild(tarjeta);
-        });
-    })
+tarjetaPelicula.appendChild(tarjetaPeliculaCara);
+tarjetaPelicula.appendChild(tarjetaPeliculaAtras);  
+pelisContenedor.appendChild(tarjetaPelicula);
+
 }
 
 
+$.get(`https://students-api.2.us-1.fl0.io/movies`,(data) => data.forEach(renderPelis));
 
 
+    

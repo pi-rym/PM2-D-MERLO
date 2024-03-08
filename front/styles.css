@@ -1,38 +1,126 @@
-body{
+body {
     background-color: rgb(10, 10, 10);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgb(248, 248, 243);
 }
-header{
-    background-color: rgba(73, 76, 94, 0.438);
-}
-nav{
-    padding: 10px;
-    background-color: rgb(27, 27, 27);
-}
-section{
+header {
+    background-color: rgba(3, 3, 3, 0.438);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
-h1{
-    font-size: 2em;
+nav {
     padding: 10px;
+    background-color: rgb(27, 26, 26);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
-h3{
+section {
+    display: flex;
+    justify-content: space-evenly;
+}
+main {
+    flex-grow: 1; /* Hace que el main ocupe todo el espacio disponible */
+}
+h1 {
+    font-size: 5em;
+    padding: 10px;
+    justify-content: center;
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;  
+}
+h3 {
     font-size: 25px;
     font-weight: 500;
     padding: 10px;
 }
-p{
+p {
     padding: 1.5px;
     color: rgb(190, 191, 192);
 }
-img{
-    max-width: 15em;
-}
-li, a{
+li,
+a {
     display: inline;
-    color: aliceblue;
-    padding: 10px ;
+    color: rgb(173, 174, 175);
+    padding: 10px;
     text-decoration: none;
+}
+li, a:hover{
+    color: rgb(255, 255, 255);
+}
+footer {
+    position: fixed; /* Fija el footer en la parte inferior */
+    bottom: 0; /* Alinea el footer en la parte inferior */
+    width: 100%; 
+    background-color: #000000;
+    color: #7c7b7b;
+    text-align: center;
+    padding: 20px 0;
+}
+.pelisContenedor {
+    justify-content: space-ev;
+}
+.peliCard {
+    max-width: 12em;
+    justify-content: center;
+    word-wrap: break-word;
+    margin: 10px 10px;
+}
+.poster {
+    max-width: 13em;
+    padding: 0.5em 0.5em;
+    border-radius: 15px;
+
+}
+.title {
+    color: #ffffff;
+}
+.infoPeli {
+    color: #cecaca;
+    padding: 2px;
+}
+
+.peliCard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+.peliCardCara {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: transform 2s;
+}
+.peliCard:hover .peliCardCara {
+    transform: rotateY(180deg);
+}
+.peliCardAtras {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+.peliCard:hover .peliCardAtras {
+    transform: rotateY(0deg);
+    transition: transform 2s;
+    backface-visibility: hidden;
+}
+.carruselTamaño {
+    width: 90%; 
+    margin: 0 auto; 
+    overflow: hidden; 
+}
+.textoCarrusel{
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-family: "Kaushan Script", cursive;
+    font-style: normal;
 }

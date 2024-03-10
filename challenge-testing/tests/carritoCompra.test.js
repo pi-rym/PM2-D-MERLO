@@ -9,40 +9,41 @@ _El método aplicarDescuento debería aplicar un descuento al total de la compra
 _El método aplicarDescuento debería devolver el total sin cambios si el descuento es 0.
 */
 
-describe("CarritoCompra", ()=>{
-    let instancia;
-    beforeEach(()=>{
-        instancia = new CarritoCompra;
+describe("CarritoCompra", () => {
+  let instancia;
+  beforeEach(() => {
+    instancia = new CarritoCompra;
+  });
+
+
+  describe("agregarProducto", () => {
+    it("Debería agregar un producto al carrito", () => {
+      instancia.agregarProducto({ nombre: "Producto1", precio: 10 });
+      expect(instancia.carrito.length).toBe(1);
     });
-});
-
-describe("agregarProducto", ()=>{
-  it("Debería agregar un producto al carrito", ()=>{
-    instancia.agregarProducto({nombre: "Producto1", precio: 10});
-    expect(instancia.carrito.length).toBe(1);
-  });
-})
-
-describe("calcularTotal", ()=>{
-  it("Debería sumar el precio de todos los productos del carrito", ()=>{
-    instancia.agregarProducto({nombre: "Producto1", precio: 10});
-    instancia.agregarProducto({nombre: "Producto2", precio: 20});
-    expect(instancia.calcularTotal()).toBe(30);
   })
-  it("Debería devolver 0 si no hay productos en el carrito", ()=>{
-    expect(instancia.calcularTotal()).toBe(0);
-  });
-});
 
-describe("aplicarDescuento", ()=>{
-  it("Debería aplicar un descuento al total de la compra según el porcentaje especificado", ()=>{
-    instancia.agregarProducto({nombre: "Producto1", precio: 10});
-    instancia.agregarProducto({nombre: "Producto2", precio: 20});
-    expect(instancia.aplicarDescuento(10)).toBe(27);
+  describe("calcularTotal", () => {
+    it("Debería sumar el precio de todos los productos del carrito", () => {
+      instancia.agregarProducto({ nombre: "Producto1", precio: 10 });
+      instancia.agregarProducto({ nombre: "Producto2", precio: 20 });
+      expect(instancia.calcularTotal()).toBe(30);
+    })
+    it("Debería devolver 0 si no hay productos en el carrito", () => {
+      expect(instancia.calcularTotal()).toBe(0);
+    });
   });
-  it("Debería devolver el total sin cambios si el descuento es 0", ()=>{
-    instancia.agregarProducto({nombre: "Producto1", precio: 10});
-    expect(instancia.aplicarDescuento(0)).toBe(10);
-  });
-});
 
+  describe("aplicarDescuento", () => {
+    it("Debería aplicar un descuento al total de la compra según el porcentaje especificado", () => {
+      instancia.agregarProducto({ nombre: "Producto1", precio: 10 });
+      instancia.agregarProducto({ nombre: "Producto2", precio: 20 });
+      expect(instancia.aplicarDescuento(10)).toBe(27);
+    });
+    it("Debería devolver el total sin cambios si el descuento es 0", () => {
+      instancia.agregarProducto({ nombre: "Producto1", precio: 10 });
+      expect(instancia.aplicarDescuento(0)).toBe(10);
+    });
+  });
+
+});

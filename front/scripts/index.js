@@ -1,36 +1,12 @@
-
-const pelisContenedor = document.getElementById('pelisContenedor');
-
-function renderPelis(pelicula) {
-
-const tarjetaPelicula = document.createElement("div");
-tarjetaPelicula.classList.add("peliCard");  
-
-const tarjetaPeliculaCara = document.createElement("div");
-tarjetaPeliculaCara.classList.add("peliCardCara");
-tarjetaPeliculaCara.innerHTML = `
-<img class="poster" src="${pelicula.poster}" alt="${pelicula.title}">
-`;
-
-const tarjetaPeliculaAtras = document.createElement("div");
-tarjetaPeliculaAtras.classList.add("peliCardAtras");
-tarjetaPeliculaAtras.innerHTML = `
-     <h3 class="title">${pelicula.title} (${pelicula.year})</h3>
-     <p class="infoPeli">Dirigida por: ${pelicula.director}</p>
-     <p class="infoPeli">Duración: ${pelicula.duration}</p>
-     <p class="infoPeli">Género: ${pelicula.genre}</p>
-     <p class="infoPeli">${pelicula.rate}</p>
-`;
+const renderPelis = require("./renderPelis");
+const axios = require("axios");
 
 
-tarjetaPelicula.appendChild(tarjetaPeliculaCara);
-tarjetaPelicula.appendChild(tarjetaPeliculaAtras);  
-pelisContenedor.appendChild(tarjetaPelicula);
+const url = "https://students-api.up.railway.app/movies";
+axios.get(url)
+.then(({data})=>data.forEach(renderPelis))
+.catch((error)=>{
+console.log("La petición a la url no se realizó correctamente");
+console.log(error.message);
+});
 
-}
-
-
-$.get(`https://students-api.2.us-1.fl0.io/movies`,(data) => data.forEach(renderPelis));
-
-
-    

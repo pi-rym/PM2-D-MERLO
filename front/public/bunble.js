@@ -15,7 +15,7 @@
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const renderPelis = __webpack_require__(/*! ./renderPelis */ \"./scripts/renderPelis.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\n\r\nconst url = \"https://students-api.up.railway.app/movies\";\r\naxios.get(url)\r\n.then(({data})=>data.forEach(renderPelis))\r\n.catch((error)=>{\r\nconsole.log(\"La petición a la url no se realizó correctamente\");\r\nconsole.log(error.message);\r\n});\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const renderPelis = __webpack_require__(/*! ./renderPelis */ \"./scripts/renderPelis.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\n\r\nconst url = \"http://localhost:3000/movies\";\r\naxios.get(url)\r\n.then(({data})=>data.forEach(renderPelis))\r\n.catch((error)=>{\r\nconsole.log(\"La petición a la url no se realizó correctamente\");\r\nconsole.log(error.message);\r\n});\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 

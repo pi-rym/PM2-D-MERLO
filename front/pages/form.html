@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <link rel="stylesheet" href="../reset.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Kaushan+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>Form</title> 
 </head>
 <body>
+    <header>
+        <h1>Moviesland</h1>
+        <nav>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="./historiaDelCine.html">Proyecto</a></li>
+            <li><a href="./peliSiempre.html">Peli Siempre</a></li>
+            <li><a href="./form.html">Crear</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        
+            <form action="#" method="get" enctype="multipart/form-data">
+                <h2>Nueva Película</h2>
+                <label for="titulo"></label>
+                <input type="text" name="titulo" class="form" placeholder="Título:" required>
+
+                <label for="año"></label>
+                <input name="año" placeholder="Año:" required></input>
+
+                <label for="director"></label>
+                <input type="text" name="director" placeholder="Director:" required>
+
+                <label for="duracion"></label>
+                <input type="text" name="duracion" placeholder="Duración:" required>
+
+                <label for="genero"></label>
+                <input type="text" name="genero" placeholder="Género:" required>
+
+                <label for="ranking"></label>
+                <input type="text" name="ranking" placeholder="Ranking:" required>
+
+                <label for="poster"></label>
+                <input type="url" name="poster"  placeholder="URL del poster:" required>
+                <div id="botones">
+                  <input type="submit" id="enviarMovie" value="Enviar"> 
+                  <input type="reset" id="borrarMovie" value="Borrar"> 
+                </div>
+
+              
+            </form>
+         
+      </main>
+      
+      <footer>
+        <span>
+          Hecho por <strong>Delfina Merlo</strong></span></br>
+        Todos los derechos reservados &copy; 2024
+        </span>
+      </footer>
     
+      <script src="../public/bunble.js"></script>
 </body>
 </html>

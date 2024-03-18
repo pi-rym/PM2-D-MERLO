@@ -1,8 +1,13 @@
 const app = require("./src/server");
+const dbConetion = require("./src/config/dbConection")
 
-const PORT = 3000
-app.listen(PORT, ()=>{
-    console.log(`Servidor escuchando en el puerto ${PORT}`)
-});
+
+dbConetion() 
+
+.then(()=>{
+    const PORT = 3000
+    app.listen(PORT, ()=>console.log(`Servidor escuchando en el puerto ${PORT}`))
+})
+.catch((err)=>console.log("Tenemos problemas con la conexión a la DB"));
 
 module.exports = app;

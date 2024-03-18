@@ -1,6 +1,6 @@
 class Movies {
     constructor({title, year, director, duration, genre, rate, poster}) {
-        if ( !title || !poster || !director ){
+        if ( !title || !year || !director || !duration || !genre || !rate || !poster  ){
             throw new Error("Faltan campos requeridos");
         }
         this.title=title;

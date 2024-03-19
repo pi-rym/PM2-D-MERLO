@@ -1,15 +1,15 @@
 class Movies {
-    constructor({title, year, director, duration, genre, rate, poster}) {
-        if ( !title || !year || !director || !duration || !genre || !rate || !poster  ){
+    constructor({título, año, director, duración, género, ranking, póster}) {
+        if (!título || !año || !director || !duración || !género || !ranking || !póster  ){
             throw new Error("Faltan campos requeridos");
         }
-        this.title=title;
-        this.year=year;
+        this.título=título;
+        this.año=año;
         this.director=director;
-        this.duration=duration;
-        this.genre=genre;
-        this.rate=rate;
-        this.poster=poster;
+        this.duración=duración;
+        this.género=género;
+        this.ranking=ranking;
+        this.póster=póster;
     }
 }
 module.exports = {Movies};

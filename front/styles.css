@@ -32,10 +32,10 @@ section {
 }
 main{
     margin-bottom: 100px;
+    width: 100%;
+    justify-content: center;
 }
-article{
-    width: 70%;
-}
+
 h1 {
     font-size: 5rem;
     padding: 0px 0px 5px 0px;
@@ -96,6 +96,7 @@ input{
     background-color: #0f0f0f;
     color: rgb(196, 195, 195);
     width: 70%;
+    padding-block: 10px;
 }
 label{
     margin-bottom: 5px;
@@ -164,6 +165,32 @@ label{
     font-family: "Kaushan Script", cursive;
     font-style: normal;
 }
+.divHistoria{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.divHistoria:hover{
+    transform: scale(1.1);
+}
+.imgCine{
+    max-width: 300px;
+    max-height: 200px;
+    border: #ffffff solid 3px;
+    border-radius: 10px;
+    margin: 10px 20px;
+}
+#mainHistoria{
+    display: flex;
+}
+#divCine{
+    width: 100%;
+    justify-content: center;
+    margin-left: 70px;
+    margin-right: 70px;
+}
 
 #botones{
     display: flex;
@@ -177,7 +204,7 @@ label{
     width: 10%;
 margin: 0px 5px 0px 0px;
 }
-#borrarMovie{
+#limpiarCampos{
     background-color: red;
     width: 10%;
 

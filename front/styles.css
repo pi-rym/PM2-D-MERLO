@@ -104,6 +104,8 @@ label{
 
 .pelisContenedor {
     justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
 }
 .peliCard {
     max-width: 12em;
@@ -204,8 +206,14 @@ label{
     width: 10%;
 margin: 0px 5px 0px 0px;
 }
+#enviarMovie:hover{
+    background-color: rgb(3, 148, 3);
+}
 #limpiarCampos{
-    background-color: red;
+    background-color: rgb(235, 8, 8);
     width: 10%;
 
+}
+#limpiarCampos:hover{
+    background-color: rgb(255, 0, 0);
 }

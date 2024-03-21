@@ -23,28 +23,28 @@
 
       <main>
         
-            <form id="Form" action="#" method="get" enctype="multipart/form-data">
+            <form id="Form" action="#" method="post" enctype="multipart/form-data">
                 <h2>Nueva Película</h2>
-                <label for="titulo"></label>
-                <input type="text" name="titulo" class="form" placeholder="Título:" required>
+                <label for="title"></label>
+                <input type="text" name="titulo" id="title" placeholder="Título:" autocomplete="off" required>
 
-                <label for="año"></label>
-                <input name="año" placeholder="Año:" required></input>
+                <label for="year"></label>
+                <input type="number" name="año" id="year" min="1800" placeholder="Año:" autocomplete="off" required></input>
 
                 <label for="director"></label>
-                <input type="text" name="director" placeholder="Director:" required>
+                <input type="text" name="director" id="director" placeholder="Director:" autocomplete="off" required>
 
-                <label for="duracion"></label>
-                <input type="text" name="duracion" placeholder="Duración:" required>
+                <label for="duration"></label>
+                <input type="text" name="duracion" id="duration" placeholder="Duración:" autocomplete="off" required>
 
-                <label for="genero"></label>
-                <input type="text" name="genero" placeholder="Género:" required>
-
-                <label for="ranking"></label>
-                <input type="text" name="ranking" placeholder="Ranking:" required>
+                <label for="genre"></label>
+                <input type="text" name="genero" id="genre" placeholder="Género:" autocomplete="off" required>
+             
+                <label for="rate"></label>
+                <input type="number" step="any" name="rate" id="rate" step="0.01" min="" max="10" placeholder="Calificación:" autocomplete="off" required>
 
                 <label for="poster"></label>
-                <input type="url" name="poster"  placeholder="URL del poster:" required>
+                <input type="url" name="poster" id="poster" placeholder="URL del poster:" autocomplete="off" required>
                 <div id="botones">
                   <input type="submit" id="enviarMovie" value="Enviar"> 
                   <input type="reset" id="limpiarCampos" value="Limpiar"> 
@@ -62,6 +62,6 @@
         </span>
       </footer>
     
-      <script src="../public/bunble.js"></script>
+      <script src="../public/films.js"></script>
 </body>
 </html>

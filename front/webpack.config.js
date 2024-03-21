@@ -1,9 +1,12 @@
 module.exports ={
     mode: "development",
-    entry: "./scripts/index.js",
+    entry: {
+        index: "./scripts/index.js",
+        films: "./scripts/createMovie.js"
+    },
 
     output: {
      path: __dirname + "/public",
-     filename: "bunble.js",
+     filename: "[name].js",
     },
 };

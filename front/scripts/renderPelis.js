@@ -9,6 +9,7 @@ function renderPelis(pelicula) {
           const tarjetaPeliculaCara = document.createElement("div");
           tarjetaPeliculaCara.classList.add("peliCardCara");
           tarjetaPeliculaCara.innerHTML = `<img class="poster" src="${pelicula.poster}" alt="${pelicula.title}">`;
+          console.log(pelicula.title)
 
           const tarjetaPeliculaAtras = document.createElement("div");
           tarjetaPeliculaAtras.classList.add("peliCardAtras");
@@ -20,9 +21,9 @@ function renderPelis(pelicula) {
           <p class="infoPeli">${pelicula.rate}</p>
           `;
 
-          tarjetaPelicula.appendChild(tarjetaPeliculaCara);
-          tarjetaPelicula.appendChild(tarjetaPeliculaAtras);
-          pelisContenedor.appendChild(tarjetaPelicula);
+          tarjetaPelicula?.appendChild(tarjetaPeliculaCara);
+          tarjetaPelicula?.appendChild(tarjetaPeliculaAtras);
+          pelisContenedor?.appendChild(tarjetaPelicula);
 
     
 }

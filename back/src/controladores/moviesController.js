@@ -6,7 +6,7 @@ const {getMovies, postMovies}= require('../servicios/moviesService');
     const movies = await getMovies();
     res.status(200).json(movies);
     } catch (error) {
-    res.status(500).json(error.message)
+    res.status(500).json(error.message) 
     }  
   }
 

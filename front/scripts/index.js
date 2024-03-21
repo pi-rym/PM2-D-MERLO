@@ -1,4 +1,3 @@
-const createMovie = require("./createMovie");
 const renderPelis = require("./renderPelis");
 const axios = require("axios");
 

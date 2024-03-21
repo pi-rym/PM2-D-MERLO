@@ -3,8 +3,8 @@ const axios = require("axios");
 function validateForm ({title, year, director, duration, genre, rate, poster}){
   if(!title || !year || !director || !duration || !genre[0] || !rate || !poster) return ("Deben completarse todos los campos");
   if(!poster.includes("https://")) return ("El póster debe ser una URL válida");
-  if(!year.length === 4) return ("El año debe contener cuatro cifras");
-  if(isNaN(rate) || rate < 1 || rate > 10) return ("El ranking debe ser número del  al 10");
+  if (year.length !== 4 || parseInt(year) <= 1800 || isNaN(parseInt(year)))  return ("El año debe contener cuatro cifras y ser correcto");
+  if(isNaN(rate) || rate < 1 || rate > 10) return ("La calificación debe ser número del 1 al 10");
   return null;
 }
 
@@ -32,30 +32,25 @@ function createMovie (event) {
 }
 
 
-function cleanInputs (event){
-  event.preventDefault();
+function cleanInputs (){
 
-  const titleValue = document.getElementById("title").value;
-  const yearValue = document.getElementById("year").value;
-  const directorValue = document.getElementById("director").value;
-  const durationValue = document.getElementById("duration").value;
-  const genreValue = document.getElementById("genre").value.split(" ");
-  const rateValue = document.getElementById("rate").value;
-  const posterValue = document.getElementById("poster").value;
+  const titleValue = document.getElementById("title");
+  const yearValue = document.getElementById("year");
+  const directorValue = document.getElementById("director");
+  const durationValue = document.getElementById("duration");
+  const genreValue = document.getElementById("genre");
+  const rateValue = document.getElementById("rate");
+  const posterValue = document.getElementById("poster");
 
   titleValue = "";
   yearValue = "";
   directorValue = "";
   durationValue = "";
   genreValue = "";
-  rateValue = "";
+  rateValue = ""; 
   posterValue = "";
 }
 
-const limpiarBtn = document.getElementById("limpiarCampos");
-limpiarBtn.addEventListener("click", cleanInputs);
+document.getElementById("limpiarCampos").addEventListener("click", cleanInputs);
 
 document.getElementById("enviarMovie").addEventListener("click", createMovie);
-
-
-module.exports = createMovie;

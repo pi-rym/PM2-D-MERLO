@@ -9,23 +9,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./scripts/createMovie.js":
-/*!********************************!*\
-  !*** ./scripts/createMovie.js ***!
-  \********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nfunction validateForm ({title, year, director, duration, genre, rate, poster}){\r\n  if(!title || !year || !director || !duration || !genre[0] || !rate || !poster) return (\"Deben completarse todos los campos\");\r\n  if(!poster.includes(\"https://\")) return (\"El póster debe ser una URL válida\");\r\n  if(!year.length === 4) return (\"El año debe contener cuatro cifras\");\r\n  if(isNaN(rate) || rate < 1 || rate > 10) return (\"El ranking debe ser número del  al 10\");\r\n  return null;\r\n}\r\n\r\nfunction createMovie (event) {\r\n  event.preventDefault();\r\n\r\n  const title = document.getElementById(\"title\").value;\r\n  const year = document.getElementById(\"year\").value;\r\n  const director = document.getElementById(\"director\").value;\r\n  const duration = document.getElementById(\"duration\").value;\r\n  const genre = document.getElementById(\"genre\").value.split(\" \");\r\n  const rate = document.getElementById(\"rate\").value;\r\n  const poster = document.getElementById(\"poster\").value;\r\n\r\n  const newMovie = {title, year, director, duration, genre, rate, poster};\r\n\r\n  const error = validateForm (newMovie);\r\n   if(error) return alert(error);\r\n\r\n   axios\r\n   .post(\"http://localhost:3000/movies\", newMovie)\r\n   .then(()=> alert(\"Película creada\"))\r\n   .catch((error)=> alert(\"Error al crear la película\"))\r\n \r\n}\r\n\r\n\r\nfunction cleanInputs (event){\r\n  event.preventDefault();\r\n\r\n  const titleValue = document.getElementById(\"title\").value;\r\n  const yearValue = document.getElementById(\"year\").value;\r\n  const directorValue = document.getElementById(\"director\").value;\r\n  const durationValue = document.getElementById(\"duration\").value;\r\n  const genreValue = document.getElementById(\"genre\").value.split(\" \");\r\n  const rateValue = document.getElementById(\"rate\").value;\r\n  const posterValue = document.getElementById(\"poster\").value;\r\n\r\n  titleValue = \"\";\r\n  yearValue = \"\";\r\n  directorValue = \"\";\r\n  durationValue = \"\";\r\n  genreValue = \"\";\r\n  rateValue = \"\";\r\n  posterValue = \"\";\r\n}\r\n\r\nconst limpiarBtn = document.getElementById(\"limpiarCampos\");\r\nlimpiarBtn.addEventListener(\"click\", cleanInputs);\r\n\r\ndocument.getElementById(\"enviarMovie\").addEventListener(\"click\", createMovie);\r\n\r\n\r\nmodule.exports = createMovie;\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie.js?");
-
-/***/ }),
-
 /***/ "./scripts/index.js":
 /*!**************************!*\
   !*** ./scripts/index.js ***!
   \**************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const createMovie = __webpack_require__(/*! ./createMovie */ \"./scripts/createMovie.js\");\r\nconst renderPelis = __webpack_require__(/*! ./renderPelis */ \"./scripts/renderPelis.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst getMovies = async ()=> {\r\n    try {\r\n      const { data } = await axios.get(\"http://localhost:3000/movies\");\r\n      data.forEach(renderPelis);\r\n    } catch (error) {\r\n      console.log(\"La petición a la URL no se realizó correctamente\");\r\n      console.log(error.message);\r\n    }\r\n  }\r\n  \r\n\r\ndocument.addEventListener(\"DOMContentLoaded\", ()=>{\r\n    getMovies();\r\n})\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
+eval("const renderPelis = __webpack_require__(/*! ./renderPelis */ \"./scripts/renderPelis.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst getMovies = async ()=> {\r\n    try {\r\n      const { data } = await axios.get(\"http://localhost:3000/movies\");\r\n      data.forEach(renderPelis);\r\n    } catch (error) {\r\n      console.log(\"La petición a la URL no se realizó correctamente\");\r\n      console.log(error.message);\r\n    }\r\n  }\r\n  \r\n\r\ndocument.addEventListener(\"DOMContentLoaded\", ()=>{\r\n    getMovies();\r\n})\r\n\r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
 
 /***/ }),
 

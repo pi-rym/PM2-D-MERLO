@@ -101,23 +101,17 @@ input{
 label{
     margin-bottom: 5px;
 }
-
-.pelisContenedor {
-    justify-content: space-evenly;
-    display: flex;
-    flex-wrap: wrap;
-}
 .peliCard {
     max-width: 12em;
     justify-content: center;
     word-wrap: break-word;
-    margin: 10px 10px;
+    margin: 40px 10px;
 }
 .poster {
     max-width: 13em;
     padding: 0.5em 0.5em;
     border-radius: 15px;
-
+    margin-bottom: 10px;
 }
 .title {
     color: #ffffff;
@@ -183,6 +177,14 @@ label{
     border: #ffffff solid 3px;
     border-radius: 10px;
     margin: 10px 20px;
+}
+#pelisContenedor {
+    justify-content: space-evenly;
+    display: flexbox;
+    flex-wrap: wrap;
+    height: 100%;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
 }
 #mainHistoria{
     display: flex;
